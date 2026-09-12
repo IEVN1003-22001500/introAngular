@@ -1,1 +1,84 @@
-<p>heroes-list works!</p>
+<div class="card">
+    <div class="card-header"><h1>heroes dragon ball</h1></div>
+
+    <div class="card-body">
+<div class="row">
+    <div class="col-md-2">filtrar por: </div>
+    <div class="col-md-4">
+        <input type="text" class="from-control" placeholder="Inrese el nombre del heroe">
+
+    </div>
+</div>
+
+
+<div class="row">
+    <div clas="col-md-6"><h3>filtro:</h3></div>
+</div>
+
+<div class="table-responsive">
+<table class="table table-striped" *ngIf="heroes.length > 0">
+    <thead>
+<tr>
+<th><button (click)="showImage()" class="btn btn-primary">{{muestraImagen?'Ocultar':'Mostrar'}}imagen</button></th>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th>Raza</th>
+    <th>Ki</th>
+</tr>
+    </thead>
+<tbody>
+    <tr *ngFor="let heroe of heroes">
+      <!--   <td>
+            <img [src]="heroes[0].imagen" width="75">
+        </td> -->
+        <td> <img *ngIf="muestraImagen" [src]="heroe.imagen" [style.width.px]="imageWidth" [style.margin.px]="imageMargin"> </td>
+        <td>{{heroe.nombre}}</td>
+        <td>{{heroe.descripcion}}</td>
+        <td>{{heroe.race}}</td>
+        <td>{{heroe.ki}}</td>
+
+    </tr>
+
+     <!-- <tr>
+         <td>
+        <img [src]="heroes[1].imagen" width="50">
+    </td>
+        <td>{{heroes[1].nombre}}</td>
+        <td>{{heroes[1].descripcion}}</td>
+        <td>{{heroes[1].race}}</td>
+        <td>{{heroes[1].ki}}</td>
+
+    </tr>
+
+    <tr>
+     <td>
+        <img [src]="heroes[2].imagen" width="50">
+    </td>
+        <td>{{heroes[2].nombre}}</td>
+        <td>{{heroes[2].descripcion}}</td>
+        <td>{{heroes[2].race}}</td>
+        <td>{{heroes[2].ki}}</td>
+
+    </tr>
+
+    <tr>
+       <td>
+        <img [src]="heroes[3].imagen" width="50">
+    </td>
+        <td>{{heroes[3].nombre}}</td>
+        <td>{{heroes[3].descripcion}}</td>
+        <td>{{heroes[3].race}}</td>
+        <td>{{heroes[3].ki}}</td>
+
+    </tr> -->
+</tbody>
+
+
+
+</table>
+</div>
+
+
+    </div>
+
+</div>

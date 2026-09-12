@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +7,27 @@ import { Component } from '@angular/core';
   templateUrl: './app.html',
 })
 export class App {
+  
+  title:string = 'Brian Jesus Rodriguez Nuñez'
 
-  title = 'Brian Jesus Rodriguez nuñez';
 
-  duplicarnumero(a: number): number {
-    return a * 2;
+  duplicarnumero(a:number):number{
+    return a*2;
   }
 
-  pelicula = {
-    titulo: 'spider-man',
-    fechaLanzamiento: '12/32/09'
-  };
+  pelicula={
+    titulo: 'Spiderman',
+    fechaLanzamiento: new Date(),
+    precio: 2353
+  }
+
 }
+
+//@component({
+//selector: 'app-root',
+//template: '
+
+//<div> <h1>{{title}}</h>
+//<app-heroes-list></app/heroes-list>
+//</div>'
+//})
