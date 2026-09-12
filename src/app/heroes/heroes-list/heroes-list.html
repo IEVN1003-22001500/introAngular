@@ -5,14 +5,14 @@
 <div class="row">
     <div class="col-md-2">filtrar por: </div>
     <div class="col-md-4">
-        <input type="text" class="from-control" placeholder="Inrese el nombre del heroe">
+        <input [(ngModel)]="listFilter" type="text" class="from-control" placeholder="Inrese el nombre del heroe">
 
     </div>
 </div>
 
 
 <div class="row">
-    <div clas="col-md-6"><h3>filtro:</h3></div>
+    <div class="col-md-6"><h3>Filtro: {{listFilter}}</h3></div>
 </div>
 
 <div class="table-responsive">
@@ -27,7 +27,8 @@
 </tr>
     </thead>
 <tbody>
-    <tr *ngFor="let heroe of heroes">
+    <tr *ngFor="let heroe of heroes | heroesFilter:listFilter">
+
       <!--   <td>
             <img [src]="heroes[0].imagen" width="75">
         </td> -->
