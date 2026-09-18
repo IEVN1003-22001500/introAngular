@@ -1,0 +1,263 @@
+<h2>Área de figuras geométricas</h2>
+
+<h4>Selecciona una figura:</h4>
+
+
+<!-- CUADRADO -->
+<div class="form-check">
+
+    <input
+        class="form-check-input"
+        type="radio"
+        name="figura"
+        value="cuadrado"
+        [(ngModel)]="figura"
+        id="cuadrado">
+
+    <label class="form-check-label" for="cuadrado">
+        Cuadrado
+    </label>
+
+</div>
+
+
+<!-- RECTÁNGULO -->
+<div class="form-check">
+
+    <input
+        class="form-check-input"
+        type="radio"
+        name="figura"
+        value="rectangulo"
+        [(ngModel)]="figura"
+        id="rectangulo">
+
+    <label class="form-check-label" for="rectangulo">
+        Rectángulo
+    </label>
+
+</div>
+
+
+<!-- TRIÁNGULO -->
+<div class="form-check">
+
+    <input
+        class="form-check-input"
+        type="radio"
+        name="figura"
+        value="triangulo"
+        [(ngModel)]="figura"
+        id="triangulo">
+
+    <label class="form-check-label" for="triangulo">
+        Triángulo
+    </label>
+
+</div>
+
+
+<!-- CÍRCULO -->
+<div class="form-check">
+
+    <input
+        class="form-check-input"
+        type="radio"
+        name="figura"
+        value="circulo"
+        [(ngModel)]="figura"
+        id="circulo">
+
+    <label class="form-check-label" for="circulo">
+        Círculo
+    </label>
+
+</div>
+
+
+<!-- PENTÁGONO -->
+<div class="form-check">
+
+    <input
+        class="form-check-input"
+        type="radio"
+        name="figura"
+        value="pentagono"
+        [(ngModel)]="figura"
+        id="pentagono">
+
+    <label class="form-check-label" for="pentagono">
+        Pentágono
+    </label>
+
+</div>
+
+
+<br>
+
+
+<!-- CUADRADO -->
+<div *ngIf="figura === 'cuadrado'">
+
+    <h4>Cuadrado</h4>
+
+    <label for="lado">
+        Lado:
+    </label>
+
+    <input
+        [(ngModel)]="lado"
+        type="number"
+        name="lado"
+        class="form-control"
+        id="lado"
+        placeholder="Ingresa el lado">
+
+</div>
+
+
+<!-- RECTÁNGULO -->
+<div *ngIf="figura === 'rectangulo'">
+
+    <h4>Rectángulo</h4>
+
+    <label for="base">
+        Base:
+    </label>
+
+    <input
+        [(ngModel)]="base"
+        type="number"
+        name="base"
+        class="form-control"
+        id="base"
+        placeholder="Ingresa la base">
+
+    <br>
+
+    <label for="altura">
+        Altura:
+    </label>
+
+    <input
+        [(ngModel)]="altura"
+        type="number"
+        name="altura"
+        class="form-control"
+        id="altura"
+        placeholder="Ingresa la altura">
+
+</div>
+
+
+<!-- TRIÁNGULO -->
+<div *ngIf="figura === 'triangulo'">
+
+    <h4>Triángulo</h4>
+
+    <label for="baseTriangulo">
+        Base:
+    </label>
+
+    <input
+        [(ngModel)]="base"
+        type="number"
+        name="baseTriangulo"
+        class="form-control"
+        id="baseTriangulo"
+        placeholder="Ingresa la base">
+
+    <br>
+
+    <label for="alturaTriangulo">
+        Altura:
+    </label>
+
+    <input
+        [(ngModel)]="altura"
+        type="number"
+        name="alturaTriangulo"
+        class="form-control"
+        id="alturaTriangulo"
+        placeholder="Ingresa la altura">
+
+</div>
+
+
+<!-- CÍRCULO -->
+<div *ngIf="figura === 'circulo'">
+
+    <h4>Círculo</h4>
+
+    <label for="radio">
+        Radio:
+    </label>
+
+    <input
+        [(ngModel)]="radio"
+        type="number"
+        name="radio"
+        class="form-control"
+        id="radio"
+        placeholder="Ingresa el radio">
+
+</div>
+
+
+<!-- PENTÁGONO -->
+<div *ngIf="figura === 'pentagono'">
+
+    <h4>Pentágono</h4>
+
+    <label for="perimetro">
+        Perímetro:
+    </label>
+
+    <input
+        [(ngModel)]="perimetro"
+        type="number"
+        name="perimetro"
+        class="form-control"
+        id="perimetro"
+        placeholder="Ingresa el perímetro">
+
+    <br>
+
+    <label for="apotema">
+        Apotema:
+    </label>
+
+    <input
+        [(ngModel)]="apotema"
+        type="number"
+        name="apotema"
+        class="form-control"
+        id="apotema"
+        placeholder="Ingresa el apotema">
+
+</div>
+
+
+<br>
+
+
+<!-- BOTÓN -->
+<button
+    (click)="calcularArea()"
+    type="button"
+    class="btn btn-primary">
+
+    Calcular área
+
+</button>
+
+
+<br>
+<br>
+
+
+<!-- RESULTADO -->
+<h3>
+    Área: {{ resultado }}
+</h3>
+
